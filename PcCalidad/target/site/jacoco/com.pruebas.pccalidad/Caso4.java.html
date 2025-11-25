@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Caso4.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PcCalidad</a> &gt; <a href="index.source.html" class="el_package">com.pruebas.pccalidad</a> &gt; <span class="el_source">Caso4.java</span></div><h1>Caso4.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.pruebas.pccalidad;
+
+/**
+ *
+ * @author Angie
+ */
+
+<span class="fc" id="L12">public class Caso4 {</span>
+
+    public String procesarTexto(String texto) {
+
+<span class="fc bfc" id="L16" title="All 2 branches covered.">        if (texto == null) {</span>
+<span class="fc" id="L17">            throw new IllegalArgumentException(&quot;El texto no puede ser nulo&quot;);</span>
+        }
+
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (texto.trim().isEmpty()) {</span>
+<span class="fc" id="L21">            throw new IllegalArgumentException(&quot;El texto no puede estar vacío&quot;);</span>
+        }
+
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        if (texto.length() &gt; 1000) {</span>
+<span class="fc" id="L25">            throw new IllegalArgumentException(&quot;El texto excede el límite de 1000 caracteres&quot;);</span>
+        }
+
+        // Eliminar espacios al inicio y final
+<span class="fc" id="L29">        String procesado = texto.trim();</span>
+
+        // Invertir el texto
+<span class="fc" id="L32">        procesado = new StringBuilder(procesado).reverse().toString();</span>
+
+        // Convertir a mayúsculas
+<span class="fc" id="L35">        procesado = procesado.toUpperCase();</span>
+
+<span class="fc" id="L37">        return procesado;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
