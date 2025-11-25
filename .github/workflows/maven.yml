@@ -11,11 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Paso 1: Clona tu repositorio
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Paso 2: Configura JDK 17
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
@@ -23,13 +21,11 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      # Paso 3: Compila y ejecuta pruebas unitarias
       - name: Build and test with Maven
-        run: mvn clean verify
+        run: mvn -f PcCalidad/pom.xml clean verify
 
-      # Paso 4: Sube el reporte JaCoCo como artefacto
       - name: Upload JaCoCo report
         uses: actions/upload-artifact@v4
         with:
           name: jacoco-report
-          path: target/site/jacoco
+          path: PcCalidad/target/site/jacoco
